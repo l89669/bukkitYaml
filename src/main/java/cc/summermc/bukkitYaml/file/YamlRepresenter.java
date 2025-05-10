@@ -3,6 +3,7 @@ package cc.summermc.bukkitYaml.file;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.nodes.Node;
 import org.yaml.snakeyaml.representer.Representer;
 
@@ -11,6 +12,7 @@ import cc.summermc.bukkitYaml.ConfigurationSection;
 public class YamlRepresenter extends Representer {
 
     public YamlRepresenter() {
+        super(new DumperOptions());
         this.multiRepresenters.put(ConfigurationSection.class, new RepresentConfigurationSection());
         //this.multiRepresenters.put(ConfigurationSerializable.class, new RepresentConfigurationSerializable());
     }
